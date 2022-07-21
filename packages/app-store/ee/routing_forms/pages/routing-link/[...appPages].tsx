@@ -226,7 +226,9 @@ function processRoute({ form, response }: { form: Form; response: Response }) {
     for (const [uuid, { value }] of Object.entries(response)) {
       responseValues[uuid] = value;
     }
+
     if (logic) {
+      console.log("Checking logic with response", logic, responseValues);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       result = jsonLogic.apply(logic as any, responseValues);
     } else {
