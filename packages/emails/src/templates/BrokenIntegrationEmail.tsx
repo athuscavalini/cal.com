@@ -1,4 +1,4 @@
-import { TFunction } from "next-i18next";
+import type { TFunction } from "next-i18next";
 import { Trans } from "react-i18next";
 
 import { AppStoreLocationType } from "@calcom/app-store/locations";
@@ -60,7 +60,7 @@ export const BrokenIntegrationEmail = (
   if (type === "video") {
     let location = calEvent.location ? getEnumKeyByEnumValue(AppStoreLocationType, calEvent.location) : " ";
     if (location === "Daily") {
-      location = "Cal Video";
+      location = "Daily";
     }
     if (location === "GoogleMeet") {
       location = location.slice(0, 5) + " " + location.slice(5);

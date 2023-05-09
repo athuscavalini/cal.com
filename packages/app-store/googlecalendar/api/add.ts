@@ -7,6 +7,7 @@ import { encodeOAuthState } from "../../_utils/encodeOAuthState";
 import getAppKeysFromSlug from "../../_utils/getAppKeysFromSlug";
 
 const scopes = [
+  "https://www.googleapis.com/auth/calendar",
   "https://www.googleapis.com/auth/calendar.readonly",
   "https://www.googleapis.com/auth/calendar.events",
 ];

@@ -121,7 +121,7 @@ const Component = ({
               <img className="min-h-16 min-w-16 h-16 w-16" src={logo} alt={name} />
               <h1 className="font-cal ml-4 text-3xl text-gray-900">{name}</h1>
             </div>
-            <h2 className="text-sm font-medium text-gray-600">
+            <h2 className="text-sm font-medium text-gray-600" style={{ display: "none" }}>
               <Link
                 href={`categories/${categories[0]}`}
                 className="rounded-md bg-gray-100 p-1 text-xs capitalize text-gray-800">
@@ -235,8 +235,10 @@ const Component = ({
         )}
 
         <div className="prose-sm prose mt-8">{body}</div>
-        <h4 className="mt-8 font-semibold text-gray-900 ">{t("pricing")}</h4>
-        <span>
+        <h4 className="mt-8 font-semibold text-gray-900 " style={{ display: "none" }}>
+          {t("pricing")}
+        </h4>
+        <span style={{ display: "none" }}>
           {price === 0 ? (
             t("free_to_use_apps")
           ) : (
@@ -251,8 +253,10 @@ const Component = ({
           )}
         </span>
 
-        <h4 className="mt-8 mb-2 font-semibold text-gray-900 ">{t("learn_more")}</h4>
-        <ul className="prose-sm -ml-1 -mr-1 leading-5">
+        <h4 className="mt-8 mb-2 font-semibold text-gray-900 " style={{ display: "none" }}>
+          {t("learn_more")}
+        </h4>
+        <ul className="prose-sm -ml-1 -mr-1 leading-5" style={{ display: "none" }}>
           {docs && (
             <li>
               <a
@@ -315,11 +319,14 @@ const Component = ({
             </li>
           )}
         </ul>
-        <hr className="my-8" />
-        <span className="leading-1 block text-xs text-gray-500">
+        <hr className="my-8" style={{ display: "none" }} />
+        <span className="leading-1 block text-xs text-gray-500" style={{ display: "none" }}>
           {t("every_app_published", { appName: APP_NAME, companyName: COMPANY_NAME })}
         </span>
-        <a className="mt-2 block text-xs text-red-500" href={`mailto:${SUPPORT_MAIL_ADDRESS}`}>
+        <a
+          className="mt-2 block text-xs text-red-500"
+          href={`mailto:${SUPPORT_MAIL_ADDRESS}`}
+          style={{ display: "none" }}>
           <FiFlag className="inline h-3 w-3" /> {t("report_app")}
         </a>
       </div>
@@ -360,7 +367,7 @@ export default function App(props: {
   dependencies?: string[];
 }) {
   return (
-    <Shell smallHeading isPublic heading={<ShellHeading />} backPath="/apps" withoutSeo>
+    <Shell smallHeading isPublic heading={<ShellHeading />} withoutSeo>
       <HeadSeo
         title={props.name}
         description={props.description}

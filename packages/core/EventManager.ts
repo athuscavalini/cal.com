@@ -308,9 +308,9 @@ export default class EventManager {
   private async createAllCalendarEvents(event: CalendarEvent) {
     /** Can I use destinationCalendar here? */
     /* How can I link a DC to a cred? */
-
+    /* eslint-disable */
     let createdEvents: EventResult<NewCalendarEventType>[] = [];
-    if (event.destinationCalendar) {
+    /*if (event.destinationCalendar) {
       if (event.destinationCalendar.credentialId) {
         const credential = this.calendarCredentials.find(
           (c) => c.id === event.destinationCalendar?.credentialId
@@ -331,10 +331,6 @@ export default class EventManager {
         );
       }
     } else {
-      /**
-       *  Not ideal but, if we don't find a destination calendar,
-       * fallback to the first connected calendar
-       */
       const [credential] = this.calendarCredentials.filter((cred) => cred.type === "calendar");
       if (credential) {
         const createdEvent = await createEvent(credential, event);
@@ -342,7 +338,7 @@ export default class EventManager {
           createdEvents.push(createdEvent);
         }
       }
-    }
+    }*/
 
     // Taking care of non-traditional calendar integrations
     createdEvents = createdEvents.concat(

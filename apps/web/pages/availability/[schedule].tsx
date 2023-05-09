@@ -180,7 +180,7 @@ export default function Availability() {
       }
       CTA={
         <div className="flex items-center justify-end">
-          <div className="flex items-center rounded-md px-2 sm:hover:bg-gray-100">
+          <div className="flex items-center rounded-md px-2 sm:hover:bg-gray-100" style={{ display: "none" }}>
             <Skeleton
               as={Label}
               htmlFor="hiddenSwitch"
@@ -197,10 +197,16 @@ export default function Availability() {
             />
           </div>
 
-          <VerticalDivider />
+          <VerticalDivider style={{ display: "none" }} />
           <Dialog>
             <DialogTrigger asChild>
-              <Button StartIcon={FiTrash} variant="icon" color="destructive" aria-label={t("delete")} />
+              <Button
+                StartIcon={FiTrash}
+                variant="icon"
+                color="destructive"
+                aria-label={t("delete")}
+                style={{ display: "none" }}
+              />
             </DialogTrigger>
             <ConfirmationDialogContent
               isLoading={deleteMutation.isLoading}
@@ -215,7 +221,7 @@ export default function Availability() {
             </ConfirmationDialogContent>
           </Dialog>
 
-          <VerticalDivider />
+          <VerticalDivider style={{ display: "none" }} />
 
           <div className="border-l-2 border-gray-300" />
           <Button className="ml-4 lg:ml-0" type="submit" form="availability-form">
@@ -277,8 +283,8 @@ export default function Availability() {
                   }
                 />
               </div>
-              <hr className="my-6 mr-8" />
-              <div className="hidden rounded-md md:block">
+              <hr className="my-6 mr-8" style={{ display: "none" }} />
+              <div className="hidden rounded-md md:block" style={{ display: "none" }}>
                 <h3 className="text-sm font-medium text-gray-900">{t("something_doesnt_look_right")}</h3>
                 <div className="mt-3 flex">
                   <Button href="/availability/troubleshoot" color="secondary">

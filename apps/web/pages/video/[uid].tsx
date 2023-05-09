@@ -39,6 +39,7 @@ export default function JoinCall(props: JoinCallPageProps) {
           supportiveText: "#FFF",
         },
       },
+      lang: "pt",
       showLeaveButton: true,
       iframeStyle: {
         position: "fixed",

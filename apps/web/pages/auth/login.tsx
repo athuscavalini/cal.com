@@ -79,7 +79,7 @@ export default function Login({
   callbackUrl = safeCallbackUrl || "";
 
   const LoginFooter = (
-    <a href={`${WEBSITE_URL}/signup`} className="text-brand-500 font-medium">
+    <a href={`${WEBSITE_URL}/signup`} style={{ display: "none" }} className="text-brand-500 font-medium">
       {t("dont_have_an_account")}
     </a>
   );
@@ -128,8 +128,8 @@ export default function Login({
       <AuthContainer
         title={t("login")}
         description={t("login")}
-        showLogo
-        heading={twoFactorRequired ? t("2fa_code") : t("welcome_back")}
+        //showLogo
+        heading="Login"
         footerText={
           twoFactorRequired
             ? !totpEmail
@@ -155,7 +155,9 @@ export default function Login({
                   {...register("email")}
                 />
                 <div className="relative">
-                  <div className="absolute -top-[6px]  z-10 ltr:right-0 rtl:left-0">
+                  <div
+                    style={{ display: "none" }}
+                    className="absolute -top-[6px]  z-10 ltr:right-0 rtl:left-0">
                     <Link
                       href="/auth/forgot-password"
                       tabIndex={-1}

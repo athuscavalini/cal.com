@@ -1151,7 +1151,7 @@ function getGoogleCalendarCredential() {
     type: "google_calendar",
     key: {
       scope:
-        "https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/calendar.readonly",
       token_type: "Bearer",
       expiry_date: 1656999025367,
       access_token: "ACCESS_TOKEN",

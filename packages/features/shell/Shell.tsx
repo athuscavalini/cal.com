@@ -725,6 +725,8 @@ function SideBarContainer() {
   // Though when logged out, app store pages would temporarily show SideBar until session status is confirmed.
   if (status !== "loading" && status !== "authenticated") return null;
   if (router.route.startsWith("/v2/settings/")) return null;
+  if (router.route.startsWith("/availability")) return null;
+  if (router.route.startsWith("/apps")) return null;
   return <SideBar />;
 }
 

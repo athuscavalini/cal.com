@@ -598,14 +598,19 @@ export default function Success(props: SuccessProps) {
                   !isCancelled &&
                   (!isCancellationMode ? (
                     <>
-                      <hr className="border-bookinglightest dark:border-darkgray-300 mb-8" />
-                      <div className="text-center last:pb-0">
+                      <hr
+                        className="border-bookinglightest dark:border-darkgray-300 mb-8"
+                        style={{ display: "none" }}
+                      />
+                      <div className="text-center last:pb-0" style={{ display: "none" }}>
                         <span className="text-gray-900 ltr:mr-2 rtl:ml-2 dark:text-gray-50">
                           {t("need_to_make_a_change")}
                         </span>
 
                         {!props.recurringBookings && (
-                          <span className="text-bookinglight inline text-gray-700">
+                          <span
+                            className="text-bookinglight inline text-gray-700"
+                            style={{ display: "none" }}>
                             <span className="underline">
                               <Link
                                 href={`/reschedule/${seatReferenceUid || bookingInfo?.uid}`}
@@ -618,6 +623,7 @@ export default function Success(props: SuccessProps) {
                         )}
 
                         <button
+                          style={{ display: "none" }}
                           data-testid="cancel"
                           className={classNames(
                             "text-bookinglight text-gray-700 underline",
